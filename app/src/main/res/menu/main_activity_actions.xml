@@ -1,0 +1,47 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 搜索, 应该作为动作按钮展示-->
+    <item
+        android:id="@+id/action_search"
+        android:title="@string/menu_search" />
+    <!-- 设置, 在溢出菜单中展示 -->
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/menu_set" />
+    <item
+        android:id="@+id/menu_fragment"
+        android:title="@string/menu_fragment" />
+    <item
+        android:id="@+id/menu_fragment_del"
+        android:title="@string/menu_fragment_del" />
+    <item
+        android:id="@+id/menu_set_sp"
+        android:title="设置SharedPreferences" />
+    <item
+        android:id="@+id/menu_get_sp"
+        android:title="获取SharedPreferences" />
+
+    <item
+        android:id="@+id/menu_share"
+        android:title="分享" />
+    <item
+        android:id="@+id/menu_tell"
+        android:title="打电话" />
+    <item
+        android:id="@+id/menu_xinghuilogin"
+        android:title="星辉登录" />
+    <item
+        android:id="@+id/menu_view_anim"
+        android:title="View渐变" />
+    <item
+        android:id="@+id/menu_viewpager"
+        android:title="View切换" />
+    <item
+        android:id="@+id/menu_xh"
+        android:title="星辉" />
+    <item
+        android:id="@+id/menu_xh2"
+        android:title="星辉2" />
+    <item
+        android:id="@+id/menu_xh_recyc"
+        android:title="星辉Recycler" />
+</menu>

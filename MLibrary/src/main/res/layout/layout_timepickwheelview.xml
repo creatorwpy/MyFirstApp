@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <library.mlibrary.view.wheelview.wheelview_one.widget.WheelView
+        android:id="@+id/wv_year"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></library.mlibrary.view.wheelview.wheelview_one.widget.WheelView>
+
+    <TextView
+        android:id="@+id/tv_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="年"
+        android:textSize="15dp" />
+
+    <library.mlibrary.view.wheelview.wheelview_one.widget.WheelView
+        android:id="@+id/wv_month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></library.mlibrary.view.wheelview.wheelview_one.widget.WheelView>
+
+    <TextView
+        android:id="@+id/tv_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="月"
+        android:textSize="15dp" />
+
+    <library.mlibrary.view.wheelview.wheelview_one.widget.WheelView
+        android:id="@+id/wv_day"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></library.mlibrary.view.wheelview.wheelview_one.widget.WheelView>
+
+    <TextView
+        android:id="@+id/tv_day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="日"
+        android:textSize="15dp" />
+
+    <library.mlibrary.view.wheelview.wheelview_one.widget.WheelView
+        android:id="@+id/wv_hour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></library.mlibrary.view.wheelview.wheelview_one.widget.WheelView>
+
+    <TextView
+        android:id="@+id/tv_hour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="时"
+        android:textSize="15dp" />
+
+    <library.mlibrary.view.wheelview.wheelview_one.widget.WheelView
+        android:id="@+id/wv_minute"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></library.mlibrary.view.wheelview.wheelview_one.widget.WheelView>
+
+    <TextView
+        android:id="@+id/tv_minute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="分"
+        android:textSize="15dp" />
+
+    <library.mlibrary.view.wheelview.wheelview_one.widget.WheelView
+        android:id="@+id/wv_second"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"></library.mlibrary.view.wheelview.wheelview_one.widget.WheelView>
+
+    <TextView
+        android:id="@+id/tv_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="秒"
+        android:textSize="15dp" />
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/xh_yiren_img"
+        android:layout_width="match_parent"
+        android:layout_height="320px"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center"
+        android:src="@drawable/qq"/>
+    <TextView
+        android:id="@+id/xh_yiren_number"
+        android:layout_width="30dp"
+        android:layout_height="15dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#ffffff"
+        android:gravity="center"
+        android:text="10"
+        android:textColor="#000000"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="#50000000"
+        android:orientation="vertical"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <TextView
+            android:id="@+id/xh_yiren_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="王鹏勇"
+            android:textColor="#ffffff"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/xh_yiren_piaoshu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="83.1万"
+            android:textColor="#ffffff"
+            android:textSize="13sp" />
+    </LinearLayout>
+</RelativeLayout>

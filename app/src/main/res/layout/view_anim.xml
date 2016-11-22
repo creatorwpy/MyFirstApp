@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/view_anim_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="渐变动画（也叫消失）通常指渐渐的淡出某个UI组件，同时同步地淡入另一个。当App想切换内容或View的情况下，这种动画很有用。渐变简短不易察觉，同时又提供从一个界面到下一个之间流畅的转换。如果在需要转换的时候没有使用任何动画效果，这会使得转换看上去感到生硬而仓促。
+
+下面是一个利用进度指示渐变到一些文本内容的例子。为设置动画，我们需要按照如下步骤来做：
+
+为我们想渐变的View 创建成员变量。在之后动画应用途中修改View的时候我们会需要这些引用。
+
+对于被淡入的View，设置它的visibility为GONE。这样防止view再占据布局的空间，而且也能在布局计算中将其忽略，加速处理过程。
+
+将config_shortAnimTime系统属性暂存到一个成员变量里。这个属性为动画定义了一个标准的“短”持续时间。对于细微或者快速发生的动画，这是个很理想的持续时段。也可以根据实际需求使用config_longAnimTime或config_mediumAnimTime。
+下面是一个利用进度指示渐变到一些文本内容的例子。为设置动画，我们需要按照如下步骤来做：
+
+为我们想渐变的View 创建成员变量。在之后动画应用途中修改View的时候我们会需要这些引用。
+
+对于被淡入的View，设置它的visibility为GONE。这样防止view再占据布局的空间，而且也能在布局计算中将其忽略，加速处理过程。
+
+将config_shortAnimTime系统属性暂存到一个成员变量里。这个属性为动画定义了一个标准的“短”持续时间。对于细微或者快速发生的动画，这是个很理想的持续时段。也可以根据实际需求使用config_longAnimTime或config_mediumAnimTime。
+下面是一个利用进度指示渐变到一些文本内容的例子。为设置动画，我们需要按照如下步骤来做：
+
+为我们想渐变的View 创建成员变量。在之后动画应用途中修改View的时候我们会需要这些引用。
+
+对于被淡入的View，设置它的visibility为GONE。这样防止view再占据布局的空间，而且也能在布局计算中将其忽略，加速处理过程。
+
+将config_shortAnimTime系统属性暂存到一个成员变量里。这个属性为动画定义了一个标准的“短”持续时间。对于细微或者快速发生的动画，这是个很理想的持续时段。也可以根据实际需求使用config_longAnimTime或config_mediumAnimTime。
+下面是一个利用进度指示渐变到一些文本内容的例子。为设置动画，我们需要按照如下步骤来做：
+
+为我们想渐变的View 创建成员变量。在之后动画应用途中修改View的时候我们会需要这些引用。
+
+对于被淡入的View，设置它的visibility为GONE。这样防止view再占据布局的空间，而且也能在布局计算中将其忽略，加速处理过程。
+
+将config_shortAnimTime系统属性暂存到一个成员变量里。这个属性为动画定义了一个标准的“短”持续时间。对于细微或者快速发生的动画，这是个很理想的持续时段。也可以根据实际需求使用config_longAnimTime或config_mediumAnimTime。
+下面是一个利用进度指示渐变到一些文本内容的例子。为设置动画，我们需要按照如下步骤来做：
+
+为我们想渐变的View 创建成员变量。在之后动画应用途中修改View的时候我们会需要这些引用。
+
+对于被淡入的View，设置它的visibility为GONE。这样防止view再占据布局的空间，而且也能在布局计算中将其忽略，加速处理过程。
+
+将config_shortAnimTime系统属性暂存到一个成员变量里。这个属性为动画定义了一个标准的“短”持续时间。对于细微或者快速发生的动画，这是个很理想的持续时段。也可以根据实际需求使用config_longAnimTime或config_mediumAnimTime。
+下面是一个利用进度指示渐变到一些文本内容的例子。为设置动画，我们需要按照如下步骤来做：
+
+为我们想渐变的View 创建成员变量。在之后动画应用途中修改View的时候我们会需要这些引用。
+
+对于被淡入的View，设置它的visibility为GONE。这样防止view再占据布局的空间，而且也能在布局计算中将其忽略，加速处理过程。
+
+将config_shortAnimTime系统属性暂存到一个成员变量里。这个属性为动画定义了一个标准的“短”持续时间。对于细微或者快速发生的动画，这是个很理想的持续时段。也可以根据实际需求使用config_longAnimTime或config_mediumAnimTime。
+下面是一个利用进度指示渐变到一些文本内容的例子。为设置动画，我们需要按照如下步骤来做：
+
+为我们想渐变的View 创建成员变量。在之后动画应用途中修改View的时候我们会需要这些引用。
+
+对于被淡入的View，设置它的visibility为GONE。这样防止view再占据布局的空间，而且也能在布局计算中将其忽略，加速处理过程。
+
+将config_shortAnimTime系统属性暂存到一个成员变量里。这个属性为动画定义了一个标准的“短”持续时间。对于细微或者快速发生的动画，这是个很理想的持续时段。也可以根据实际需求使用config_longAnimTime或config_mediumAnimTime。
+下面是一个利用进度指示渐变到一些文本内容的例子。为设置动画，我们需要按照如下步骤来做：
+
+为我们想渐变的View 创建成员变量。在之后动画应用途中修改View的时候我们会需要这些引用。
+
+对于被淡入的View，设置它的visibility为GONE。这样防止view再占据布局的空间，而且也能在布局计算中将其忽略，加速处理过程。
+
+将config_shortAnimTime系统属性暂存到一个成员变量里。这个属性为动画定义了一个标准的“短”持续时间。对于细微或者快速发生的动画，这是个很理想的持续时段。也可以根据实际需求使用config_longAnimTime或config_mediumAnimTime。" />
+    </ScrollView>
+    <ProgressBar
+        android:id="@+id/view_anim_loading"
+        style="?android:progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <Button
+        android:id="@+id/view_anim_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:text="点击我加载"/>
+</FrameLayout>

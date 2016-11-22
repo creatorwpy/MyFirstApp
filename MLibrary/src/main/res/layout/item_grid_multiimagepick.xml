@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<library.mlibrary.view.fixwh.FixHeightRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:id="@+id/v_trans"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#40000000"></View>
+
+    <RelativeLayout
+        android:id="@+id/checkRL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_switch"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:background="#10555555"
+            android:src="@drawable/multi_check_on" />
+    </RelativeLayout>
+</library.mlibrary.view.fixwh.FixHeightRelativeLayout>

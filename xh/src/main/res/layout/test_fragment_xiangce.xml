@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+    <library.mlibrary.view.pulltorefresh.pullview.PullLayout
+        android:id="@+id/pullView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <library.mlibrary.view.recyclerview.RecyclerView
+            android:id="@+id/rv_xiangce"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </library.mlibrary.view.recyclerview.RecyclerView>
+    </library.mlibrary.view.pulltorefresh.pullview.PullLayout>
+</LinearLayout>
