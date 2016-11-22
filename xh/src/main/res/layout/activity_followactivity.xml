@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/backRL"
+            android:layout_width="45dp"
+            android:background="@drawable/selector_bg_0"
+            android:layout_height="45dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/title_back" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="我的关注、粉丝"
+                android:textColor="@color/title"
+                android:textSize="@dimen/title_large" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/shareRL"
+            android:layout_width="45dp"
+            android:layout_height="45dp">
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <library.mlibrary.view.pulltorefresh.pullview.PullLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/pullView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <library.mlibrary.view.recyclerview.RecyclerView
+            android:id="@+id/rv_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </library.mlibrary.view.recyclerview.RecyclerView>
+    </library.mlibrary.view.pulltorefresh.pullview.PullLayout>
+
+</LinearLayout>

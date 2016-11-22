@@ -309,7 +309,6 @@ public class XingxiuFragment extends BaseFragment {
         public RefreshEvent() {
             super();
             LogDebug.v("XingxiuFragment:","public static class RefreshEvent1");
-            LogDebug.v("aa","tests");
         }
 
         public RefreshEvent(String xuanxiuid) {

@@ -58,8 +58,12 @@
         </activity>
         <activity android:name=".module.main.MainActivity" />
         <activity android:name=".module.login.LoginActivity" />
-        <activity android:name=".module.setting.SettingActivity"/>
-        <activity android:name=".widget.ImageCropActivity"/>
+        <activity android:name=".module.setting.SettingActivity" />
+        <activity android:name=".widget.ImageCropActivity" />
+        <activity
+            android:name=".module.userlist.FollowActivity"
+            android:label="@string/title_activity_follow"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

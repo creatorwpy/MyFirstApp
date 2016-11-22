@@ -21,6 +21,7 @@ import com.wpy.xh.config.NetConfig;
 import com.wpy.xh.entity.UserInfo;
 import com.wpy.xh.module.login.LoginActivity;
 import com.wpy.xh.module.setting.SettingActivity;
+import com.wpy.xh.module.userlist.FollowActivity;
 import com.wpy.xh.pojo.login.LoginResponse;
 import com.wpy.xh.pojo.login.UserInfoResponse;
 import com.wpy.xh.util.HttpUtils;
@@ -86,7 +87,7 @@ public class PersonalFragment extends BaseFragment {
 
     @Override
     protected void initViews() {
-LogDebug.v("v","initViews");
+        LogDebug.v("v", "initViews");
     }
 
     @Override
@@ -100,6 +101,8 @@ LogDebug.v("v","initViews");
         });
         personLL.setOnClickListener(this);
         settingLL.setOnClickListener(this);
+        fanLL.setOnClickListener(this);
+        favLL.setOnClickListener(this);
     }
 
     @Override
@@ -118,6 +121,24 @@ LogDebug.v("v","initViews");
                 break;
             case R.id.settingLL:
                 startActivity(new Intent(getActivity(), SettingActivity.class));
+                break;
+            case R.id.fanLL://我的粉丝
+                if (checkUserLogin()) {
+                    Intent intent = new Intent(getActivity(), FollowActivity.class);
+                    intent.putExtra(Key.TAG, "fan");
+                    startActivity(intent);
+                } else {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
+                break;
+            case R.id.favLL://我的关注
+                if (checkUserLogin()) {
+                    Intent intent = new Intent(getActivity(), FollowActivity.class);
+                    intent.putExtra(Key.TAG, "fav");
+                    startActivity(intent);
+                } else {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
                 break;
         }
     }
@@ -146,6 +167,15 @@ LogDebug.v("v","initViews");
 
     }
 
+    private boolean checkUserLogin() {
+        UserInfo userInfo = App.getApp().getUserInfo();
+        if (userInfo == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
     //没有登录时调用
     private void noUserMode() {
         App.getApp().setUserInfo(null);
@@ -163,13 +193,13 @@ LogDebug.v("v","initViews");
         UserInfo userInfo = App.getApp().getUserInfo();
         tv_name.setText(userInfo.getNickName());
         iv_gender.setVisibility(View.VISIBLE);
-        if(userInfo.isMan()){
+        if (userInfo.isMan()) {
             iv_gender.setImageResource(R.drawable.gender_boy);
-        }else{
+        } else {
             iv_gender.setImageResource(R.drawable.gender_girl);
         }
         tv_level.setText(userInfo.getRichLevel());
-        Utils.showImage(this,iv_avatar,NetConfig.getAvatar(userInfo.getUserId(),userInfo.getAvatarUpdate()));
+        Utils.showImage(this, iv_avatar, NetConfig.getAvatar(userInfo.getUserId(), userInfo.getAvatarUpdate()));
     }
 
     private void getUserinfo(UserInfo userInfo) {
@@ -188,7 +218,7 @@ LogDebug.v("v","initViews");
                     Type type = typeToken.getType();
                     UserInfoResponse userInfoResponse = gson.fromJson(string, type);
                     if (userInfoResponse.getCode().equals("200")) {
-                        if(!saveUserInfo(userInfoResponse)){
+                        if (!saveUserInfo(userInfoResponse)) {
                             showToastShort("获取用户信息失败，请稍候再试");
                         }
                     } else {
@@ -225,26 +255,27 @@ LogDebug.v("v","initViews");
     };
     private CommonDialog commonDialog;
     private String mPicTakeFromCamera;
-    private void showUpLoadAvatorDialog(){
-        if(commonDialog==null){
+
+    private void showUpLoadAvatorDialog() {
+        if (commonDialog == null) {
             commonDialog = new CommonDialog(getActivity());
             commonDialog.setTitle("设置头像");
             commonDialog.setLeft("相册");
             commonDialog.setRight("拍照");
-            commonDialog.setListener(new CommonDialog.Listener(){
+            commonDialog.setListener(new CommonDialog.Listener() {
                 @Override
                 public void onLeftClick() {//相册
                     super.onLeftClick();
-                    SysUtil.choosePhoto(getThis(),1001);
+                    SysUtil.choosePhoto(getThis(), 1001);
                 }
 
                 @Override
                 public void onRightClick() {
                     super.onRightClick();
                     // /storage/emulated/0/Android/data/.com.wpy.xh/cache/picture/1479571200000.jpg
-                    mPicTakeFromCamera = DIR.CACHE_PICTURE+ CommonUtil.getCurrentMS()+".jpg";
-                    LogDebug.v("Dir",mPicTakeFromCamera);
-                    SysUtil.startCamera(getThis(),new File(mPicTakeFromCamera),1002);
+                    mPicTakeFromCamera = DIR.CACHE_PICTURE + CommonUtil.getCurrentMS() + ".jpg";
+                    LogDebug.v("Dir", mPicTakeFromCamera);
+                    SysUtil.startCamera(getThis(), new File(mPicTakeFromCamera), 1002);
                 }
             });
         }
@@ -254,12 +285,12 @@ LogDebug.v("v","initViews");
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        LogDebug.v("onActivityResult:",requestCode+"");
-        LogDebug.v("resultCode:",resultCode+"");
-        if (resultCode== Activity.RESULT_OK){
-            switch (requestCode){
+        LogDebug.v("onActivityResult:", requestCode + "");
+        LogDebug.v("resultCode:", resultCode + "");
+        if (resultCode == Activity.RESULT_OK) {
+            switch (requestCode) {
                 case 1001://相册
-                    String picPath = SysUtil.getRealpathFromUri(getActivity(),data.getData());
+                    String picPath = SysUtil.getRealpathFromUri(getActivity(), data.getData());
                     cropImage(picPath);
                     break;
                 case 1002:
@@ -269,15 +300,16 @@ LogDebug.v("v","initViews");
                     ///storage/emulated/0/Android/data/.com.wpy.xh/cache/picture/1479619933355.jpg
                     String cropedpath = data.getStringExtra(Key.PICPATH);
                     upLoadAvatar(cropedpath);
-                    LogDebug.v("cropedpath:",cropedpath);
+                    LogDebug.v("cropedpath:", cropedpath);
                     break;
             }
         }
     }
-    private void cropImage(String path){
+
+    private void cropImage(String path) {
         Intent intent = new Intent(getActivity(), ImageCropActivity.class);
-        intent.putExtra(Key.PICPATH,path);
-        startActivityForResult(intent,200);
+        intent.putExtra(Key.PICPATH, path);
+        startActivityForResult(intent, 200);
 
     }
 
@@ -322,6 +354,7 @@ LogDebug.v("v","initViews");
             }
         });
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void callBackRefresh(LoginResponse loginResponse) {
         checkUser();
