@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -308,6 +309,7 @@ public class XingxiuFragment extends BaseFragment {
         public RefreshEvent() {
             super();
             LogDebug.v("XingxiuFragment:","public static class RefreshEvent1");
+            LogDebug.v("aa","tests");
         }
 
         public RefreshEvent(String xuanxiuid) {
