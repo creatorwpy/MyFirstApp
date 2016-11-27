@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/backRL"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/selector_bg_0">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/title_back" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="艺人个人档"
+                android:textColor="@color/title"
+                android:textSize="@dimen/title_large" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/shareRL"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:background="@drawable/selector_bg_0">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/share_gray" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <library.mlibrary.view.pulltorefresh.pullview.PullLayout
+            android:id="@+id/pullView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include layout="@layout/layout_xingxiuinfo_banner"></include>
+
+                    <ImageView
+                        android:id="@+id/iv_publish"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="right|top"
+                        android:layout_marginRight="10dp"
+                        android:padding="10dp"
+                        android:src="@drawable/selector_edit_xingxiuxinfo" />
+
+                    <library.mlibrary.view.recyclerview.RecyclerView
+                        android:id="@+id/rv_photo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </library.mlibrary.view.recyclerview.RecyclerView>
+                </LinearLayout>
+            </android.support.v4.widget.NestedScrollView>
+        </library.mlibrary.view.pulltorefresh.pullview.PullLayout>
+
+        <ImageView
+            android:id="@+id/iv_vote"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_gravity="bottom|center"
+            android:layout_margin="10dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/selector_vote_btn_xingxiuinfo" />
+    </FrameLayout>
+</LinearLayout>

@@ -63,7 +63,8 @@
         <activity
             android:name=".module.userlist.FollowActivity"
             android:label="@string/title_activity_follow"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".module.home.xingxiu.XingxiuInfoActivity"></activity>
     </application>
 
 </manifest>

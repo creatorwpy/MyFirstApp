@@ -19,6 +19,7 @@ import com.wpy.xh.config.DIR;
 import com.wpy.xh.config.Key;
 import com.wpy.xh.config.NetConfig;
 import com.wpy.xh.entity.UserInfo;
+import com.wpy.xh.module.home.xingxiu.XingxiuInfoActivity;
 import com.wpy.xh.module.login.LoginActivity;
 import com.wpy.xh.module.setting.SettingActivity;
 import com.wpy.xh.module.userlist.FollowActivity;
@@ -103,6 +104,7 @@ public class PersonalFragment extends BaseFragment {
         settingLL.setOnClickListener(this);
         fanLL.setOnClickListener(this);
         favLL.setOnClickListener(this);
+        yirenLL.setOnClickListener(this);
     }
 
     @Override
@@ -140,6 +142,18 @@ public class PersonalFragment extends BaseFragment {
                     startActivity(new Intent(getActivity(), LoginActivity.class));
                 }
                 break;
+            case R.id.yirenLL://我的相册
+                if (checkUserLogin()) {
+                    Intent intent = new Intent(getActivity(), XingxiuInfoActivity.class);
+                    intent.putExtra(Key.USERID, App.getApp().getUserInfo().getUserId());
+                    intent.putExtra(Key.XUANXIUID, App.getApp().getUserInfo().getXuanxiuId());
+                    intent.putExtra(Key.PICPATH, App.getApp().getUserInfo().getYirenPic());
+                    startActivity(intent);
+                } else {
+                    startActivity(new Intent(getActivity(), LoginActivity.class));
+                }
+                break;
+
         }
     }
 
