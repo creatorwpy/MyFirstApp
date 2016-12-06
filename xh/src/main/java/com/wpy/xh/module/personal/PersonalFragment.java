@@ -22,6 +22,7 @@ import com.wpy.xh.entity.UserInfo;
 import com.wpy.xh.module.home.xingxiu.XingxiuInfoActivity;
 import com.wpy.xh.module.login.LoginActivity;
 import com.wpy.xh.module.setting.SettingActivity;
+import com.wpy.xh.module.test.TestActivity;
 import com.wpy.xh.module.userlist.FollowActivity;
 import com.wpy.xh.pojo.login.LoginResponse;
 import com.wpy.xh.pojo.login.UserInfoResponse;
@@ -80,6 +81,8 @@ public class PersonalFragment extends BaseFragment {
     private ImageView iv_gender;
     @Inject(R.id.nickRightLL)
     private LinearLayout nickRightLL;
+    @Inject(R.id.test_activity)
+    private LinearLayout test_activity;
 
     @Override
     protected void onSetContentView() {
@@ -105,6 +108,7 @@ public class PersonalFragment extends BaseFragment {
         fanLL.setOnClickListener(this);
         favLL.setOnClickListener(this);
         yirenLL.setOnClickListener(this);
+        test_activity.setOnClickListener(this);
     }
 
     @Override
@@ -152,6 +156,10 @@ public class PersonalFragment extends BaseFragment {
                 } else {
                     startActivity(new Intent(getActivity(), LoginActivity.class));
                 }
+                break;
+            case R.id.test_activity://
+                Intent intent = new Intent(getActivity(), TestActivity.class);
+                startActivity(intent);
                 break;
 
         }
@@ -204,6 +212,7 @@ public class PersonalFragment extends BaseFragment {
 
     private void hasUserMode() {
         pullView.headFinish();
+        yirenLL.setVisibility(View.VISIBLE);
         UserInfo userInfo = App.getApp().getUserInfo();
         tv_name.setText(userInfo.getNickName());
         iv_gender.setVisibility(View.VISIBLE);
